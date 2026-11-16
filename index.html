@@ -1,1 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KANASÍN 2027-2030 | Ayuntamiento 24/7</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#FFF8E7;color:#111}
+header{background:#7A0C1D;color:#fff;display:flex;align-items:center;gap:10px;padding:8px 10px;position:sticky;top:0;z-index:100;flex-wrap:wrap;border-bottom:4px solid #C9A227}
+header .foto{width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #C9A227;background:#fff}
+header .nombre b{font-size:13px;line-height:1.2}header .nombre span{font-size:10px;color:#FFD700}
+nav{flex:1;display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+nav button{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;padding:9px 10px;border-radius:8px;font-weight:800;cursor:pointer;font-size:11px}
+nav button.act,nav button:hover{background:#C9A227;color:#111}
+.layout{display:flex}.lado{width:260px;background:#7A0C1D;color:#fff;padding:14px;flex-shrink:0}
+.lado h3{color:#FFD700;font-size:12px;text-align:center;margin-bottom:10px}
+.lado button,.lado a{display:block;width:100%;text-align:left;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;padding:12px;border:none;border-radius:8px;margin-bottom:7px;font-weight:700;cursor:pointer;font-size:12px}
+.lado button:hover,.lado a:hover{background:#fff;color:#7A0C1D}
+main{flex:1;padding:14px;max-width:1050px;margin:auto;width:100%}
+.card{background:#fff;padding:16px;border-radius:14px;margin:12px 0;border-left:6px solid #7A0C1D;box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.card h2{color:#7A0C1D;font-size:18px;margin-bottom:8px}.card h3{font-size:15px;margin:8px 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}
+@media(max-width:800px){.grid3,.grid4{grid-template-columns:1fr}.layout{flex-direction:column}.lado{width:100%}}
+.red{padding:0;border-radius:14px;color:#111;text-align:left;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.red-top{padding:14px;color:#fff;text-align:center}
+.fb-top{background:#1877F2}.ig-top{background:#E1306C}.yt-top{background:#FF0000}.tk-top{background:#111}
+.red-body{padding:12px}
+.perfil-foto{width:90px;height:90px;border-radius:50%;object-fit:cover;border:4px solid #fff;margin:-45px auto 6px;display:block;background:#fff}
+.perfil-foto-mini{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.post-box{border:1px solid #eee;border-radius:10px;padding:10px;margin:8px 0;background:#fafafa;font-size:13px;line-height:1.4}
+.post-box img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-top:6px}
+input,select,textarea{width:100%;padding:11px;margin:5px 0;border:1.5px solid #ddd;border-radius:10px;font-size:14px}
+.btn{width:100%;padding:13px;background:#7A0C1D;color:#fff;border:none;border-radius:10px;font-weight:900;cursor:pointer;font-size:14px;margin-top:6px}
+.btn-oro{background:#C9A227;color:#111}
+.seccion{display:none}.seccion.act{display:block}
+.org-box{border:2px solid #C9A227;padding:12px;border-radius:10px;margin:7px 0;cursor:pointer;background:#FFF8E7}
+.org-box b{font-size:14px}
+.det{display:none;background:#FFF3CD;padding:11px;border-radius:8px;font-size:13px;margin-top:8px;line-height:1.5}.det.act{display:block}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px;border-bottom:1px solid #eee;text-align:left}th{background:#7A0C1D;color:#fff}
+.ayunta{width:100%;height:300px;object-fit:cover;border-radius:14px;margin-top:14px}
+.pill{display:inline-block;background:#E8F5E9;color:#1B5E20;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:800}
+.folio-box{background:#FFF3CD;padding:13px;border-radius:10px;text-align:center;font-weight:900;border:1px dashed #C9A227;margin:10px 0}
+.preview img,.preview video{width:100px;height:100px;object-fit:cover;border-radius:8px;margin:4px}
+footer{background:#111;color:#fff;text-align:center;padding:18px;font-size:12px}
+</style>
+</head>
+<body>
 
+<header>
+<img class="foto" src="foto1.jpg" onerror="this.src='https://via.placeholder.com/100x100/7A0C1D/FFFFFF?text=TU+FOTO'" alt="Eduardo Javier Mora González">
+<div class="nombre"><b>EDUARDO JAVIER<br>MORA GONZÁLEZ</b><br><span>ASPIRANTE • KANASÍN 2027-2030 • 9997646962</span></div>
+<nav>
+<button class="act" onclick="show('inicio',this)">▶ 1. INICIO</button>
+<button onclick="show('ayuntamiento',this)">▶ 2. AYUNTAMIENTO</button>
+<button onclick="show('direcciones',this)">▶ 3. DIRECCIONES</button>
+<button onclick="show('institutos',this)">▶ 4. INSTITUTOS MUNICIPALES</button>
+<button onclick="show('organismos',this)">▶ 5. ORGANISMOS PARA-MUNICIPALES</button>
+<button onclick="show('participacion',this)">▶ 6. PARTICIPACIÓN + ATENCIÓN</button>
+<button onclick="show('reporta',this)">▶ 7. TRÁMITES / REPORTA</button>
+</nav>
+</header>
+
+<div class="layout">
+<aside class="lado">
+<h3>☰ MENÚ CIUDADANO</h3>
+<button onclick="show('formacion',null)">📚 INFP - INSTITUTO NACIONAL DE FORMACIÓN POLÍTICA<br><span style="font-weight:400;font-size:11px">Videos, Fotos, PDFs</span></button>
+<a href="https://www.facebook.com/profile.php?id=61595673161439" target="_blank">🔗 MI FACEBOOK - SOLO VER ↗</a>
+<a href="https://www.youtube.com/@eduardojaviermoragonzalez9399" target="_blank">🔗 MI YOUTUBE - SOLO VER ↗</a>
+<a href="https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/" target="_blank">🔗 MI TIKTOK LITE - SOLO VER ↗</a>
+<a href="https://morena.org" target="_blank">🔗 MORENA.ORG ↗</a>
+<a href="https://morena.si" target="_blank">🔗 MORENA SÍ YUCATÁN ↗</a>
+<a href="https://morena.si" target="_blank">🔗 MORENA SÍ ↗</a>
+<button onclick="show('plan',null)">📘 PLAN DE DESARROLLO MUNICIPAL 2027-2030<br><span style="font-weight:400;font-size:11px">PDF Completo</span></button>
+<button onclick="show('tramites',null)">📝 TRÁMITES QUE SE HACEN EN EL GOBIERNO</button>
+<button onclick="show('quejas',null)">📢 QUEJAS Y SUGERENCIAS</button>
+<button onclick="show('app',null)">📱 APP AYUNTAMIENTO KANASÍN 24/7<br><span style="font-weight:400;font-size:11px">Servicios Públicos Municipales</span></button>
+<button onclick="show('transparencia',null)">🔍 TRANSPARENCIA</button>
+<button onclick="show('cabildo',null)">📺 SESIONES DE CABILDO EN VIVO CADA MES</button>
+<button onclick="show('admin',null)" style="background:#111">🔐 ADMIN - SOLO TÚ</button>
+<div style="margin-top:14px;background:#111;padding:12px;border-radius:10px;font-size:11px;text-align:center">KANASÍN 2027-2030<br>WhatsApp: 9997646962<br>DEMO • TODO EN GITHUB</div>
+<a href="https://wa.me/529997646962" target="_blank" style="background:#25D366;color:#fff;text-align:center">💬 WHATSAPP 9997646962 ↗</a>
+</aside>
+
+<main>
+<div id="inicio" class="seccion act">
+<div class="card"><h2>BIENVENIDO A KANASÍN 2027-2030</h2><p>Coordinación Ciudadana - Gobierno cercano, honesto y 24/7. <span class="pill">● EN LÍNEA</span></p><p style="margin-top:8px">Aquí el pueblo manda. Reporta tu gestión, consulta tu folio y descarga tu acuse con folio automático.</p><p style="margin-top:8px"><b>Facebook oficial:</b> Eduardo Javier Mora González - 655 seguidores<br><b>YouTube:</b> @eduardojaviermoragonzalez9399<br><b>TikTok Lite:</b> @eduardojaviermo99<br><b>WhatsApp:</b> 9997646962</p></div>
+
+<!-- ===== CAJITAS COMPLETAS - FACEBOOK / INSTAGRAM / YOUTUBE / TIKTOK ===== -->
+<div class="grid4">
+
+<!-- ===== CAJITA COMPLETA FACEBOOK ===== -->
+<div class="red">
+<div class="red-top fb-top"><h3>📘 FACEBOOK</h3><p style="font-size:11px">Página Oficial</p></div>
+<img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600" style="width:100%;height:90px;object-fit:cover">
+<img class="perfil-foto" src="foto1.jpg" onerror="this.src='https://via.placeholder.com/150x150/1877F2/FFFFFF?text=EJ'">
+<div class="red-body" style="text-align:center">
+<b>Eduardo Javier Mora González</b><br><span style="font-size:12px;color:#666">655 seguidores • 25 seguidos<br>Perfil • Kanasín, Yucatán</span>
+<p style="font-size:12px;margin:8px 0;background:#f0f2f5;padding:8px;border-radius:8px">✍️ El pueblo manda. Asambleas Informativas en Kanasín. Gobierno cercano, honesto y 24/7.</p>
+<a href="https://www.facebook.com/profile.php?id=61595673161439" target="_blank" style="display:block;background:#1877F2;color:#fff;padding:12px;border-radius:10px;font-weight:900;text-decoration:none">🔵 SEGUIR EN FACEBOOK</a>
+<a href="https://www.facebook.com/profile.php?id=61595673161439" target="_blank" style="display:block;background:#e4e6eb;color:#111;padding:10px;border-radius:10px;font-weight:800;text-decoration:none;margin-top:6px">👁️ VER PERFIL COMPLETO</a>
+<div style="text-align:left;margin-top:10px">
+<b style="font-size:13px">📝 Últimas publicaciones:</b>
+<div class="post-box"><b>Eduardo Javier Mora González</b> • Hace 2 días<br>📢 ASAMBLEA INFORMATIVA EN KANASÍN<br>Gracias a todas las familias que nos acompañaron. ¡El pueblo manda! <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600"><br>❤️ 45 • 💬 12 • ↗️ 8</div>
+<div class="post-box"><b>Eduardo Javier Mora González</b> • Hace 5 días<br>🤝 Recorriendo colonias de Kanasín, escuchando al pueblo. <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600"><br>❤️ 68 • 💬 20</div>
+</div>
+<p style="font-size:11px;color:#888;margin-top:6px">Solo ver, no administrar • Facebook oficial</p>
+</div>
+</div>
+
+<!-- ===== CAJITA INSTAGRAM ===== -->
+<div class="red">
+<div class="red-top ig-top"><h3>📸 INSTAGRAM</h3><p style="font-size:11px">Fotos y Reels</p></div>
+<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600" style="width:100%;height:90px;object-fit:cover">
+<img class="perfil-foto" src="foto1.jpg" onerror="this.src='https://via.placeholder.com/150x150/E1306C/FFFFFF?text=EJ'">
+<div class="red-body" style="text-align:center">
+<b>@kanasin2027</b><br><span style="font-size:12px;color:#666">Eduardo Javier Mora González<br>Kanasín 2027-2030</span>
+<p style="font-size:12px;margin:8px 0;background:#fdf0f5;padding:8px;border-radius:8px">📸 Fotos de asambleas, recorridos y pueblo.</p>
+<input id="linkIg" placeholder="Pega tu link de Instagram">
+<button class="btn" style="background:#E1306C" onclick="abrirLink('linkIg')">VER INSTAGRAM →</button>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:8px"><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=200" style="width:100%;height:60px;object-fit:cover;border-radius:6px"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=200" style="width:100%;height:60px;object-fit:cover;border-radius:6px"><img src="https://images.unsplash.com/photo-1575320181282-9afab399332c?w=200" style="width:100%;height:60px;object-fit:cover;border-radius:6px"></div>
+</div>
+</div>
+
+<!-- ===== CAJITA YOUTUBE ===== -->
+<div class="red">
+<div class="red-top yt-top"><h3>▶️ YOUTUBE</h3><p style="font-size:11px">Videos y Cabildo en Vivo</p></div>
+<img src="https://images.unsplash.com/photo-1575320181282-9afab399332c?w=600" style="width:100%;height:90px;object-fit:cover">
+<img class="perfil-foto" src="foto1.jpg" onerror="this.src='https://via.placeholder.com/150x150/FF0000/FFFFFF?text=EJ'">
+<div class="red-body" style="text-align:center">
+<b>@eduardojaviermoragonzalez9399</b><br><span style="font-size:12px;color:#666">Eduardo Javier Mora González<br>Canal Oficial</span>
+<p style="font-size:12px;margin:8px 0;background:#ffeeee;padding:8px;border-radius:8px">🎥 Videos de asambleas, recorridos y sesiones de Cabildo.</p>
+<a href="https://www.youtube.com/@eduardojaviermoragonzalez9399" target="_blank" style="display:block;background:#FF0000;color:#fff;padding:12px;border-radius:10px;font-weight:900;text-decoration:none">🔴 SUSCRIBIRME EN YOUTUBE</a>
+<div style="text-align:left;margin-top:10px">
+<b style="font-size:13px">🎬 Últimos videos:</b>
+<div class="post-box">▶️ Asamblea Informativa Kanasín<br><span style="font-size:11px;color:#888">Hace 3 días • 1.2K vistas</span><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600"></div>
+<div class="post-box">▶️ Recorrido por colonias<br><span style="font-size:11px;color:#888">Hace 1 semana • 850 vistas</span><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600"></div>
+</div>
+<p style="font-size:11px;color:#888;margin-top:6px">Solo ver, no administrar</p>
+</div>
+</div>
+
+<!-- ===== CAJITA COMPLETA TIKTOK LITE ===== -->
+<div class="red">
+<div class="red-top tk-top"><h3>🎵 TIKTOK LITE</h3><p style="font-size:11px">Videos cortos</p></div>
+<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600" style="width:100%;height:90px;object-fit:cover">
+<img class="perfil-foto" src="foto1.jpg" onerror="this.src='https://via.placeholder.com/150x150/111/FFFFFF?text=e'">
+<div class="red-body" style="text-align:center">
+<div style="width:60px;height:60px;background:#111;color:#fff;border-radius:50%;margin:auto;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900">e</div>
+<b style="font-size:16px">@eduardojaviermo99</b><br><span style="font-size:12px;color:#666">Eduardo Javier Mora González<br>TikTok Lite Oficial</span>
+<p style="font-size:12px;margin:8px 0;background:#f5f5f5;padding:8px;border-radius:8px">🎵 Videos del pueblo, asambleas y Kanasín.<br>Escanea el QR para seguirme.</p>
+<a href="https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/" target="_blank" style="display:block;background:#111;color:#fff;padding:12px;border-radius:10px;font-weight:900;text-decoration:none">🎵 SEGUIR EN TIKTOK LITE</a>
+<a href="https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/" target="_blank" style="display:block;background:#fe2c55;color:#fff;padding:10px;border-radius:10px;font-weight:800;text-decoration:none;margin-top:6px">👁️ VER TODOS MIS VIDEOS</a>
+<div style="text-align:left;margin-top:10px">
+<b style="font-size:13px">🎬 Mis videos TikTok:</b>
+<div class="post-box">🎵 Asamblea en Kanasín - El pueblo manda<br>❤️ 120 • 💬 15 • ↗️ Compartir<img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600"></div>
+<div class="post-box">🎵 Recorrido por Kanasín<br>❤️ 89 • 💬 9<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600"></div>
+</div>
+<p style="font-size:11px;color:#888;margin-top:6px">Link oficial: vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/<br>Solo ver, no administrar</p>
+</div>
+</div>
+
+</div>
+
+<div class="card"><h3>🎥 GALERÍA - SUBIR VIDEO / FOTO / PDF - COMANDO LISTO</h3><input type="file" id="upGeneral" accept="image/*,video/*,.pdf" multiple onchange="previewFile(this,'prevGeneral')"><div id="prevGeneral" class="preview"></div><button class="btn" onclick="alert('Archivo seleccionado. En GitHub se muestra aquí.')">SUBIR ARCHIVO →</button></div>
+<div class="card"><h3>🎥 VIDEO DEL MOVIMIENTO</h3><video controls style="width:100%;border-radius:10px" poster="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800"><source src="https://www.w3schools.com/html/mov_bbb.mp4"></video><p style="font-size:12px;margin-top:6px">Tu canal de YouTube: youtube.com/@eduardojaviermoragonzalez9399 - Tu TikTok Lite: vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/</p><input type="file" accept="video/*" onchange="previewFile(this,'prevVideo')"><div id="prevVideo" class="preview"></div></div>
+</div>
+
+<div id="ayuntamiento" class="seccion">
+<div class="card"><h2>🏛️ 2. AYUNTAMIENTO - ORGANIGRAMA ESTRUCTURAL MUNICIPAL</h2><p>Da clic en cada Dirección. Al dar clic salen TODAS las direcciones, y al dar clic en cualquier dirección salen los servicios, funciones y responsabilidades.</p>
+<div class="org-box" onclick="ver('d-pres')"><b>📍 PRESIDENCIA Y GOBERNACIÓN</b><div id="d-pres" class="det"><b>Servicios:</b> Audiencias, gestión general, enlace con Cabildo, atención a colonias.<br><b>Funciones:</b> Coordinar todo el gobierno, ejecutar acuerdos de Cabildo.<br><b>Responsabilidades:</b> Rendición mensual, puertas abiertas.<br><b>WhatsApp:</b> 9997646962<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-infra')"><b>📍 INFRAESTRUCTURA CIUDADANA</b><div id="d-infra" class="det"><b>Servicios:</b> Bacheo, calles, banquetas, alumbrado, parques, mercados.<br><b>Funciones:</b> Obras públicas, mantenimiento urbano.<br><b>Responsabilidades:</b> Obras sin corrupción, reporte semanal.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-bien')"><b>📍 BIENESTAR DE PUEBLO</b><div id="d-bien" class="det"><b>Servicios:</b> Apoyos, programas sociales, adultos mayores, personas con discapacidad.<br><b>Funciones:</b> Padrón de beneficiarios, jornadas.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-serv')"><b>📍 SERVICIOS PÚBLICOS</b><div id="d-serv" class="det"><b>Servicios:</b> Basura, limpia, agua, drenaje, mantenimiento.<br><b>Funciones:</b> Recolección diaria, limpieza de baldíos.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-seg')"><b>📍 SEGURIDAD CIUDADANA</b><div id="d-seg" class="det"><b>Servicios:</b> Patrullaje, prevención, emergencias, Protección Civil.<br><b>Funciones:</b> Coordinación con SSP, prevención del delito.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-fin')"><b>📍 FINANZAS SANA</b><div id="d-fin" class="det"><b>Servicios:</b> Predial, pagos, constancia de no adeudo.<br><b>Funciones:</b> Presupuesto, austeridad, transparencia financiera.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-salud')"><b>📍 SALUD Y MEDIO AMBIENTE</b><div id="d-salud" class="det"><b>Servicios:</b> Jornadas de salud, fumigación, reforestación, bienestar animal.<br><b>Funciones:</b> Salud comunitaria, ecología.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-edu')"><b>📍 EDUCACIÓN, CULTURA Y DEPORTE</b><div id="d-edu" class="det"><b>Servicios:</b> Talleres, becas, ligas deportivas, bibliotecas.<br><b>Funciones:</b> Cultura maya, deporte.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" style="background:#C9A227" onclick="ver('d-tejido')"><b>📍 9. TEJIDO SOCIAL, PARIDAD SUSTANTIVA Y JUVENTUDES</b><div id="d-tejido" class="det"><b>Servicios:</b> Atención a mujeres, jóvenes, paridad, prevención embarazo adolescente, Desarrollo Humano, Programa Familia, Atención Integral Paridad.<br><b>Funciones:</b> Tejido social por colonia, comités vecinales.<br><b>Sectoriza sin duplicar:</b> DIF - Mujer - Juventud.<br><b>Grupos:</b> Paridad de género, LGTBQI+, Grupos Vulnerables, Personas con Discapacidad, Adultos Mayores, Pueblos Mayas.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-des')"><b>📍 DESARROLLO ECONÓMICO</b><div id="d-des" class="det"><b>Servicios:</b> Empleo, emprendedores, comercio local, artesanos, turismo.<br><b>Funciones:</b> Ferias, apoyo a comercio.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('d-trans')"><b>📍 TRANSPARENCIA Y CONTRALORÍA</b><div id="d-trans" class="det"><b>Servicios:</b> Solicitudes de información, denuncias, datos abiertos.<br><b>Funciones:</b> Auditoría interna, rendición de cuentas.<br><b>Archivo:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+</div>
+</div>
+
+<div id="direcciones" class="seccion">
+<div class="card"><h2>👤 3. DIRECCIONES - DIRECTORES, TELÉFONO Y OFICINA</h2>
+<table><tr><th>Dirección</th><th>Director</th><th>Teléfono</th><th>Oficina</th></tr>
+<tr><td>Presidencia y Gobernación</td><td>Eduardo Javier Mora González</td><td>9997646962</td><td>Palacio Municipal, Centro Kanasín</td></tr>
+<tr><td>Infraestructura Ciudadana</td><td>Por asignar</td><td>9997646962</td><td>Palacio Municipal</td></tr>
+<tr><td>Bienestar de Pueblo</td><td>Por asignar</td><td>9997646962</td><td>Palacio Municipal</td></tr>
+<tr><td>Servicios Públicos</td><td>Por asignar</td><td>9997646962</td><td>Servicios Públicos</td></tr>
+<tr><td>Seguridad Ciudadana</td><td>Por asignar</td><td>911 / 9997646962</td><td>Comandancia Kanasín</td></tr>
+<tr><td>Finanzas Sana</td><td>Por asignar</td><td>9997646962</td><td>Tesorería</td></tr>
+<tr><td>Salud y Medio Ambiente</td><td>Por asignar</td><td>9997646962</td><td>Centro de Salud</td></tr>
+<tr><td>Educación, Cultura y Deporte</td><td>Por asignar</td><td>9997646962</td><td>Casa de Cultura</td></tr>
+<tr><td>Tejido Social, Paridad y Juventudes</td><td>Por asignar</td><td>9997646962</td><td>Centro de Atención</td></tr>
+<tr><td>Desarrollo Económico</td><td>Por asignar</td><td>9997646962</td><td>Palacio Municipal</td></tr>
+<tr><td>Transparencia y Contraloría</td><td>Por asignar</td><td>9997646962</td><td>Palacio Municipal</td></tr>
+</table></div>
+</div>
+
+<div id="institutos" class="seccion">
+<div class="card"><h2>🏫 4. INSTITUTOS MUNICIPALES</h2>
+<div class="org-box" onclick="ver('i-dif')"><b>DIF KANASÍN</b><div id="i-dif" class="det">Familia, asistencia social, despensas, atención a vulnerables. WhatsApp: 9997646962<br><b>Subir:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('i-mujer')"><b>INSTITUTO MUNICIPAL DE LA MUJER</b><div id="i-mujer" class="det">Atención a mujeres, prevención de violencia, talleres, paridad. WhatsApp: 9997646962<br><b>Subir:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('i-juv')"><b>INSTITUTO DE LA JUVENTUD</b><div id="i-juv" class="det">Becas, deporte, cultura, primer empleo, prevención embarazo adolescente. WhatsApp: 9997646962<br><b>Subir:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('i-edu')"><b>INSTITUTO DE EDUCACIÓN, CULTURA Y DEPORTE</b><div id="i-edu" class="det">Escuelas, cultura maya, ligas deportivas, bibliotecas. WhatsApp: 9997646962<br><b>Subir:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+</div>
+</div>
+
+<div id="organismos" class="seccion">
+<div class="card"><h2>💧 5. ORGANISMOS PARA-MUNICIPALES</h2>
+<div class="org-box" onclick="ver('o-japay')"><b>JAPAY - AGUA POTABLE Y ALCANTARILLADO</b><div id="o-japay" class="det"><b>Servicios:</b> Reporte de fuga, nuevo contrato, pago de agua, drenaje. WhatsApp reporte: 9997646962<br><b>Subir evidencia Foto / Video / PDF:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+<div class="org-box" onclick="ver('o-basura')"><b>RECOLECCIÓN DE BASURA MUNICIPAL</b><div id="o-basura" class="det"><b>Servicios:</b> Recolección diaria, reporte de basura acumulada, limpieza de baldíos. WhatsApp reporte: 9997646962<br><b>Subir evidencia:</b> <input type="file" accept="image/*,video/*,.pdf"></div></div>
+</div>
+</div>
+
+<div id="participacion" class="seccion">
+<div class="card"><h2>✋ 6. PARTICIPACIÓN CIUDADANA Y ATENCIÓN CIUDADANA</h2><p>Asambleas abiertas, comités vecinales, el pueblo decide.</p><p style="margin-top:8px"><b>Facebook:</b> <a href="https://www.facebook.com/profile.php?id=61595673161439" target="_blank">Ver mi Facebook</a><br><b>YouTube:</b> <a href="https://www.youtube.com/@eduardojaviermoragonzalez9399" target="_blank">Ver mi YouTube</a><br><b>TikTok Lite:</b> <a href="https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/" target="_blank">Ver mi TikTok Lite @eduardojaviermo99</a><br><b>WhatsApp:</b> <a href="https://wa.me/529997646962" target="_blank">9997646962 - Escríbeme aquí</a><br><b>Horario:</b> Lunes a Viernes 9am - 6pm, Sábado 9am - 1pm<br><b>Oficina:</b> Centro de Kanasín</p><button class="btn" onclick="show('reporta',null)">QUIERO PARTICIPAR →</button><a href="https://wa.me/529997646962" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;background:#25D366">💬 WHATSAPP 9997646962</a></div>
+<div class="card"><h3>Trámites más pedidos</h3><p>🔦 Alumbrado • 🕳️ Bacheo • 🗑️ Basura • 💧 Fuga de agua • 📄 Constancia • 🐕 Animales • 🌳 Poda</p></div>
+</div>
+
+<div id="reporta" class="seccion">
+<div class="card"><h2>📝 7. TRÁMITES / REPORTA TU GESTIÓN - SERVICIOS PÚBLICOS MUNICIPALES</h2><p>Llena, sube evidencia y descarga tu acuse con folio automático. WhatsApp directo: 9997646962</p>
+<input id="g-nombre" placeholder="Nombre completo *"><input id="g-tel" placeholder="WhatsApp / Teléfono *"><input id="g-colonia" placeholder="Colonia / Fraccionamiento *">
+<select id="g-tipo"><option>Bacheo / Calle</option><option>Alumbrado Público</option><option>Agua / Drenaje / JAPAY</option><option>Basura / Limpieza</option><option>Seguridad</option><option>Apoyo Social / Tejido Social / Paridad / Juventud</option><option>Otro trámite</option></select>
+<textarea id="g-desc" rows="3" placeholder="Describe tu gestión..."></textarea>
+<label><b>📎 Subir Foto / Video / PDF - Evidencia</b></label><input type="file" id="g-archivo" accept="image/*,video/*,.pdf" onchange="previewFile(this,'prevGestion')"><div id="prevGestion" class="preview"></div>
+<button class="btn" onclick="enviarGestion()">ENVIAR GESTIÓN Y GENERAR FOLIO →</button><div id="resGestion"></div></div>
+<div class="card"><h3>🔎 Consultar mi gestión por FOLIO</h3><input id="buscarFolio" placeholder="Ej: KAN-2026-0001"><button class="btn btn-oro" onclick="consultarFolio()">CONSULTAR</button><div id="consultaRes"></div></div>
+</div>
+
+<div id="formacion" class="seccion"><div class="card"><h2>📚 INFP - INSTITUTO NACIONAL DE FORMACIÓN POLÍTICA</h2><p>Cursos: Historia de la Transformación, Ética pública, Oratoria, Organización territorial, Soberanía Nacional.</p><ul style="margin:10px 0 10px 18px"><li>Curso 1: ¿Qué es la 4T?</li><li>Curso 2: Liderazgo y territorio</li><li>Curso 3: Combate a la corrupción</li></ul><p><b>Subir Video:</b></p><input type="file" accept="video/*" onchange="previewFile(this,'prevINFP')"><div id="prevINFP" class="preview"></div><p><b>Subir Foto:</b></p><input type="file" accept="image/*" onchange="previewFile(this,'prevINFP2')"><div id="prevINFP2" class="preview"></div><p><b>Subir PDF:</b></p><input type="file" accept=".pdf"></div></div>
+<div id="plan" class="seccion"><div class="card"><h2>📘 PLAN DE DESARROLLO MUNICIPAL 2027-2030</h2><p><b>Eje 1:</b> Bienestar y Justicia Social<br><b>Eje 2:</b> Kanasín Seguro y en Paz<br><b>Eje 3:</b> Obras que Transforman<br><b>Eje 4:</b> Economía y Empleo Local<br><b>Eje 5:</b> Gobierno Honesto y Cercano</p><p style="margin-top:10px"><b>Subir PDF del Plan:</b></p><input type="file" accept=".pdf"><button class="btn btn-oro" onclick="descargarPlan()">⬇ DESCARGAR PLAN EN PDF (DEMO)</button></div></div>
+<div id="tramites" class="seccion"><div class="card"><h2>📝 TRÁMITES QUE SE HACEN EN EL GOBIERNO</h2><input id="t-nombre" placeholder="Nombre *"><input id="t-tel" placeholder="Tel *"><input id="t-colonia" placeholder="Colonia *"><select id="t-tipo"><option>Constancia de residencia</option><option>Predial</option><option>Permiso de comercio</option><option>Constancia de no adeudo</option><option>Otro</option></select><textarea id="t-desc" placeholder="Detalle..."></textarea><input type="file" id="t-archivo" accept="image/*,video/*,.pdf" onchange="previewFile(this,'prevTramite')"><div id="prevTramite" class="preview"></div><button class="btn" onclick="enviarTipo('tramites','t-','resTramite')">ENVIAR TRÁMITE →</button><div id="resTramite"></div></div></div>
+<div id="quejas" class="seccion"><div class="card"><h2>📢 QUEJAS Y SUGERENCIAS</h2><input id="q-nombre" placeholder="Nombre *"><input id="q-tel" placeholder="Tel *"><input id="q-colonia" placeholder="Colonia *"><select id="q-tipo"><option>Queja</option><option>Sugerencia</option><option>Denuncia</option></select><textarea id="q-desc" placeholder="Escribe tu queja..."></textarea><input type="file" id="q-archivo" accept="image/*,video/*,.pdf" onchange="previewFile(this,'prevQueja')"><div id="prevQueja" class="preview"></div><button class="btn" onclick="enviarTipo('quejas','q-','resQueja')">ENVIAR QUEJA →</button><div id="resQueja"></div></div></div>
+<div id="app" class="seccion"><div class="card"><h2>📱 APP AYUNTAMIENTO KANASÍN 24/7 - SERVICIOS PÚBLICOS MUNICIPALES</h2><p>Servicios por parte: Agua, Basura, Alumbrado, Seguridad, Bacheo.<br>WhatsApp 24/7: 9997646962<br>Esta misma página es tu APP. Guárdala en tu celular: Menú -> Agregar a pantalla de inicio.</p><button class="btn" onclick="show('reporta',null)">REPORTAR SERVICIO 24/7 →</button><a href="https://wa.me/529997646962" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;background:#25D366">💬 WHATSAPP 9997646962</a></div></div>
+<div id="transparencia" class="seccion"><div class="card"><h2>🔍 TRANSPARENCIA</h2><p>Presupuesto, sueldos, contratos, sesiones de Cabildo, datos abiertos.</p><p><b>Subir PDF de Transparencia:</b></p><input type="file" accept=".pdf"><button class="btn">SUBIR DOCUMENTO</button></div></div>
+<div id="cabildo" class="seccion"><div class="card"><h2>📺 SESIONES DE CABILDO EN VIVO CADA MES</h2><p>En vivo el primer lunes de cada mes, 6pm. Avisos por WhatsApp 9997646962 y Facebook.</p><div style="background:#111;color:#fff;padding:30px;text-align:center;border-radius:10px">🔴 EN VIVO - PEGA AQUÍ TU LINK DE FACEBOOK LIVE / YOUTUBE LIVE / TIKTOK LITE LIVE</div><input placeholder="Pega link de Facebook Live - Tu Facebook: https://www.facebook.com/profile.php?id=61595673161439" style="margin-top:10px"><input placeholder="Pega link de YouTube Live - Tu YouTube: https://www.youtube.com/@eduardojaviermoragonzalez9399"><input placeholder="Pega link de TikTok Lite Live - Tu TikTok: https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/"><a href="https://www.youtube.com/@eduardojaviermoragonzalez9399" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;background:#FF0000">🔴 IR A MI YOUTUBE EN VIVO</a><a href="https://vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/" target="_blank" class="btn" style="display:block;text-align:center;text-decoration:none;background:#111;margin-top:8px">🎵 IR A MI TIKTOK LITE EN VIVO</a><video controls style="width:100%;margin-top:10px"><source src="https://www.w3schools.com/html/mov_bbb.mp4"></video></div></div>
+
+<div id="admin" class="seccion">
+<div class="card"><h2>🔐 VISTA ADMINISTRADOR - SOLO TÚ</h2><p style="font-size:12px">Contraseña demo: <b>1234</b> - Cámbiala en el código donde dice <b>1234</b>. WhatsApp admin: 9997646962</p><input type="password" id="passAdmin" placeholder="Contraseña"><button class="btn" onclick="loginAdmin()">ENTRAR COMO ADMIN</button><input id="filtroAdmin" placeholder="Buscar por nombre, folio, colonia..." oninput="renderAdmin()" style="margin-top:10px"><div id="tablaAdmin"></div><button class="btn btn-oro" onclick="exportarCSV()">⬇ EXPORTAR A EXCEL / CSV</button></div>
+</div>
+
+<img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1583422409516-2895a77efded?w=1200'" class="ayunta" alt="Ayuntamiento de Kanasín - Uso Ilustrativo">
+<p style="text-align:center;font-size:11px;margin-bottom:10px">Imagen del Ayuntamiento de Kanasín - Uso Ilustrativo</p>
+
+</main>
+</div>
+<footer>PLAN CIUDADANO KANASÍN 2027-2030 • Eduardo Javier Mora González • WhatsApp 9997646962<br>Facebook: facebook.com/profile.php?id=61595673161439 • YouTube: youtube.com/@eduardojaviermoragonzalez9399 • TikTok Lite: vm.tiktok.com/ZS9f3eSPfGy4c-QHEJz/ • DEMO ORGANIZATIVA • TODO HECHO EN GITHUB.COM</footer>
+
+<script>
+let gestiones = JSON.parse(localStorage.getItem('kanasin_gestiones')||'[]');
+let quejasArr = JSON.parse(localStorage.getItem('kanasin_quejas')||'[]');
+let tramitesArr = JSON.parse(localStorage.getItem('kanasin_tramites')||'[]');
+let contador = parseInt(localStorage.getItem('kanasin_cont')||'0');
+function show(id,btn){document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('act'));document.getElementById(id).classList.add('act');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('act'));if(btn)btn.classList.add('act');window.scrollTo({top:0,behavior:'smooth'});}
+function ver(id){document.getElementById(id).classList.toggle('act');}
+function abrirLink(id){let v=document.getElementById(id).value; if(v) window.open(v,'_blank'); else alert('Pega tu link primero');}
+function previewFile(input,divId){let div=document.getElementById(divId); div.innerHTML=''; [...input.files].forEach(f=>{let r=new FileReader(); r.onload=e=>{if(f.type.startsWith('image')) div.innerHTML+=`<img src="${e.target.result}">`; else if(f.type.startsWith('video')) div.innerHTML+=`<video controls src="${e.target.result}"></video>`; else div.innerHTML+=`<p>📎 ${f.name}</p>`;}; r.readAsDataURL(f);});}
+function enviarGestion(){
+let n=document.getElementById('g-nombre').value, t=document.getElementById('g-tel').value, c=document.getElementById('g-colonia').value, d=document.getElementById('g-desc').value;
+if(!n||!t||!c){alert('Llena nombre, teléfono y colonia');return;}
+contador++; localStorage.setItem('kanasin_cont',contador);
+let folio='KAN-2026-'+String(contador).padStart(4,'0');
+let g={folio,nombre:n,tel:t,colonia:c,tipo:document.getElementById('g-tipo').value,desc:d,fecha:new Date().toLocaleString('es-MX'),estatus:'🟡 RECIBIDA'};
+gestiones.push(g); localStorage.setItem('kanasin_gestiones',JSON.stringify(gestiones));
+document.getElementById('resGestion').innerHTML=`<div class="folio-box">✅ ¡GESTIÓN REGISTRADA!<br>FOLIO: ${folio}<br>${g.fecha}<br>${g.nombre} - ${g.colonia}<br>WhatsApp: 9997646962</div><button class="btn btn-oro" onclick="descargarAcuse('${folio}','gestiones')">⬇ DESCARGAR ACUSE PDF</button><p style="font-size:12px;text-align:center">Guarda tu folio para consultar.</p>`;
+}
+function enviarTipo(tipo,pref,resId){
+let n=document.getElementById(pref+'nombre').value, t=document.getElementById(pref+'tel').value, c=document.getElementById(pref+'colonia').value, d=document.getElementById(pref+'desc').value;
+if(!n||!t||!c){alert('Llena nombre, teléfono y colonia');return;}
+contador++; localStorage.setItem('kanasin_cont',contador);
+let folio=(tipo=='quejas'?'QUEJA-':'TRAM-')+String(contador).padStart(4,'0');
+let obj={folio,nombre:n,tel:t,colonia:c,tipo:document.getElementById(pref+'tipo').value,desc:d,fecha:new Date().toLocaleString('es-MX'),estatus:'🟡 RECIBIDA'};
+if(tipo=='quejas'){quejasArr.push(obj); localStorage.setItem('kanasin_quejas',JSON.stringify(quejasArr));} else {tramitesArr.push(obj); localStorage.setItem('kanasin_tramites',JSON.stringify(tramitesArr));}
+document.getElementById(resId).innerHTML=`<div class="folio-box">✅ GUARDADO<br>FOLIO: ${folio}<br>${obj.fecha}</div><button class="btn btn-oro" onclick="descargarAcuse('${folio}','${tipo}')">⬇ DESCARGAR ACUSE</button>`;
+}
+function descargarAcuse(folio,tipo){
+let lista = tipo=='gestiones'?gestiones : tipo=='quejas'?quejasArr : tramitesArr;
+let g=lista.find(x=>x.folio==folio); if(!g) return;
+let w=window.open('','_blank'); w.document.write(`<html><body style="font-family:Arial;padding:30px"><h1 style="color:#7A0C1D">ACUSE DE GESTIÓN - KANASÍN 2027-2030</h1><p><b>FOLIO:</b> ${g.folio}<br><b>Fecha:</b> ${g.fecha}<br><b>Nombre:</b> ${g.nombre}<br><b>Tel:</b> ${g.tel}<br><b>Colonia:</b> ${g.colonia}<br><b>Tipo:</b> ${g.tipo}<br><b>Descripción:</b> ${g.desc}<br><b>Estatus:</b> ${g.estatus}<br><b>WhatsApp Coordinación:</b> 9997646962</p><p>Este documento acredita que tu gestión fue recibida.</p><p>Firma: ___________________ Coordinación</p></body></html>`); w.document.close(); w.print();
+}
+function consultarFolio(){
+let f=document.getElementById('buscarFolio').value.trim().toUpperCase(); let g=gestiones.find(x=>x.folio==f) || quejasArr.find(x=>x.folio==f) || tramitesArr.find(x=>x.folio==f);
+document.getElementById('consultaRes').innerHTML=g?`<div class="card">FOLIO ${g.folio}<br>${g.nombre} - ${g.colonia}<br>Tipo: ${g.tipo}<br>Estatus: <b>${g.estatus}</b><br>${g.fecha}<br><button class="btn btn-oro" onclick="descargarAcuse('${g.folio}','gestiones')">Descargar Acuse</button></div>`:'<p style="color:red">No se encontró ese folio en este dispositivo.</p>';
+}
+function loginAdmin(){
+if(document.getElementById('passAdmin').value=='1234'){renderAdmin(); alert('Bienvenido Administrador');} else alert('Contraseña incorrecta. Demo: 1234');
+}
+function renderAdmin(){
+let f=(document.getElementById('filtroAdmin').value||'').toLowerCase();
+let filtradas=gestiones.filter(g=>JSON.stringify(g).toLowerCase().includes(f));
+let h=`<p>Total gestiones: <b>${filtradas.length}</b> | Quejas: ${quejasArr.length} | Trámites: ${tramitesArr.length}</p><table><tr><th>Folio</th><th>Nombre</th><th>Colonia</th><th>Tipo</th><th>Estatus</th><th>Acción</th></tr>`;
+filtradas.forEach(g=>{h+=`<tr><td>${g.folio}</td><td>${g.nombre}<br>${g.tel}</td><td>${g.colonia}</td><td>${g.tipo}</td><td><select onchange="cambiarEstatus('${g.folio}',this.value)"><option ${g.estatus.includes('RECIBIDA')?'selected':''}>🟡 RECIBIDA</option><option ${g.estatus.includes('PROCESO')?'selected':''}>🔵 EN PROCESO</option><option ${g.estatus.includes('RESUELTA')?'selected':''}>🟢 RESUELTA</option></select></td><td><button onclick="descargarAcuse('${g.folio}','gestiones')">PDF</button></td></tr>`;});
+h+='</table><h3 style="margin-top:12px">Quejas</h3>'; quejasArr.forEach(g=>{h+=`<p>${g.folio} | ${g.nombre} | ${g.colonia} | ${g.tipo} | ${g.estatus}</p>`;}); h+='<h3>Trámites</h3>'; tramitesArr.forEach(g=>{h+=`<p>${g.folio} | ${g.nombre} | ${g.colonia} | ${g.tipo} | ${g.estatus}</p>`;});
+document.getElementById('tablaAdmin').innerHTML=h;
+}
+function cambiarEstatus(folio,val){let g=gestiones.find(x=>x.folio==folio); if(g){g.estatus=val; localStorage.setItem('kanasin_gestiones',JSON.stringify(gestiones)); renderAdmin();}}
+function exportarCSV(){let csv='Folio,Nombre,Telefono,Colonia,Tipo,Fecha,Estatus\n'+gestiones.map(g=>`${g.folio},"${g.nombre}","${g.tel}","${g.colonia}","${g.tipo}","${g.fecha}","${g.estatus}"`).join('\n'); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='gestiones_kanasin.csv'; a.click();}
+function descargarPlan(){let w=window.open('','_blank'); w.document.write('<h1>PLAN DE DESARROLLO MUNICIPAL KANASÍN 2027-2030 (DEMO)</h1><p>Ejes: Bienestar, Seguridad, Obras, Economía, Gobierno Honesto.</p>'); w.print();}
+</script>
+</body>
+</html>
